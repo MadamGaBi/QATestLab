@@ -1,4 +1,4 @@
-package myprojects.automation.assignment2.utils;
+package myprojects.automation.assignment.utils;
 
 import org.openqa.selenium.remote.BrowserType;
 
@@ -11,6 +11,7 @@ public class Properties {
     private static final String DEFAULT_BROWSER = BrowserType.CHROME;
     private static final String DEFAULT_ADMIN_LOGIN = "webinar.test@gmail.com";
     private static final String DEFAULT_ADMIN_PASSWORD = "Xcg7299bnSmMuRLp9ITw";
+    private static final String TEST_CATEGORY = "test category";
 
     /**
      *
@@ -51,6 +52,14 @@ public class Properties {
     public static String getDefaultAdminPassword() {
         return System.getProperty(EnvironmentVariables.DEFAULT_ADMIN_PASSWORD.toString(), DEFAULT_ADMIN_PASSWORD);
     }
+
+    /**
+     *
+     * @return The name of new test category.
+     */
+    public static String getTestCategory() {
+        return System.getProperty(EnvironmentVariables.TEST_CATEGORY.toString(), TEST_CATEGORY);
+    }
 }
 
 /**
@@ -61,7 +70,8 @@ enum EnvironmentVariables {
     BASE_ADMIN_URL("env.admin.url"),
     BROWSER("browser"),
     DEFAULT_ADMIN_LOGIN("login"),
-    DEFAULT_ADMIN_PASSWORD("password");
+    DEFAULT_ADMIN_PASSWORD("password"),
+    TEST_CATEGORY("category");
 
     private String value;
     EnvironmentVariables(String value) {

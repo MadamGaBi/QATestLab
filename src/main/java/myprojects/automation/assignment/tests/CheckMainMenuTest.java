@@ -1,25 +1,24 @@
-package myprojects.automation.assignment2.tests;
+package myprojects.automation.assignment.tests;
 
-import myprojects.automation.assignment2.BaseScript;
-import myprojects.automation.assignment2.utils.Properties;
+import myprojects.automation.assignment.BaseScript;
+import myprojects.automation.assignment.GeneralActions;
+import myprojects.automation.assignment.utils.Properties;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class CheckMainMenuTest extends BaseScript{
 
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = getDriver();
+        EventFiringWebDriver driver = getConfiguredDriver();
         driver.get(Properties.getBaseAdminUrl());
-        WebElement email = driver.findElement(By.id("email"));
-        WebElement password = driver.findElement(By.id("passwd"));
-        WebElement login = driver.findElement(By.name("submitLogin"));
 
         // Login
-        email.sendKeys(Properties.getDefaultAdminLogin());
-        password.sendKeys(Properties.getDefaultAdminPassword());
-        login.submit();
-        Thread.sleep(1000);
+        String defaultAdminLogin = Properties.getDefaultAdminLogin();
+        String defaultAdminPassword = Properties.getDefaultAdminPassword();
+        GeneralActions actions = new GeneralActions(driver);
+        actions.login(defaultAdminLogin, defaultAdminPassword);
+        actions.waitForContentLoad();
 
         // Check menu item 'Dashboard'
         WebElement dashboard = driver.findElement(By.xpath(".//li[@id = 'tab-AdminDashboard']/a"));
@@ -27,7 +26,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleDashboard = driver.getTitle();
         System.out.println("Page title is " + titleDashboard);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleDashboard = driver.getTitle();
         if (titleDashboard.equals(newTitleDashboard))
             System.out.println("When page is refreshed user is still on the same page");
@@ -39,7 +38,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleOrders = driver.getTitle();
         System.out.println("Page title is " + titleOrders);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleOrders = driver.getTitle();
         if (titleOrders.equals(newTitleOrders))
             System.out.println("When page is refreshed user is still on the same page");
@@ -51,7 +50,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleCatalog = driver.getTitle();
         System.out.println("Page title is " + titleCatalog);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleCatalog = driver.getTitle();
         if (titleCatalog.equals(newTitleCatalog))
             System.out.println("When page is refreshed user is still on the same page");
@@ -63,7 +62,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleCustomer = driver.getTitle();
         System.out.println("Page title is " + titleCustomer);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleCustomer = driver.getTitle();
         if (titleCustomer.equals(newTitleCustomer))
             System.out.println("When page is refreshed user is still on the same page");
@@ -75,7 +74,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleCustomerThreads = driver.getTitle();
         System.out.println("Page title is " + titleCustomerThreads);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleCustomerThreads = driver.getTitle();
         if (titleCustomerThreads.equals(newTitleCustomerThreads))
             System.out.println("When page is refreshed user is still on the same page");
@@ -87,7 +86,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleStats = driver.getTitle();
         System.out.println("Page title is " + titleStats);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleStats = driver.getTitle();
         if (titleStats.equals(newTitleStats))
             System.out.println("When page is refreshed user is still on the same page");
@@ -99,7 +98,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleModules = driver.getTitle();
         System.out.println("Page title is " + titleModules);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleModules = driver.getTitle();
         if (titleModules.equals(newTitleModules))
             System.out.println("When page is refreshed user is still on the same page");
@@ -111,7 +110,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleDesign = driver.getTitle();
         System.out.println("Page title is " + titleDesign);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleDesign = driver.getTitle();
         if (titleDesign.equals(newTitleDesign))
             System.out.println("When page is refreshed user is still on the same page");
@@ -123,7 +122,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleShipping = driver.getTitle();
         System.out.println("Page title is " + titleShipping);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleShipping = driver.getTitle();
         if (titleShipping.equals(newTitleShipping))
             System.out.println("When page is refreshed user is still on the same page");
@@ -135,7 +134,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titlePayment = driver.getTitle();
         System.out.println("Page title is " + titlePayment);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitlePayment = driver.getTitle();
         if (titlePayment.equals(newTitlePayment))
             System.out.println("When page is refreshed user is still on the same page");
@@ -147,7 +146,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleInternational = driver.getTitle();
         System.out.println("Page title is " + titleInternational);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleInternational = driver.getTitle();
         if (titleInternational.equals(newTitleInternational))
             System.out.println("When page is refreshed user is still on the same page");
@@ -159,7 +158,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleParameters = driver.getTitle();
         System.out.println("Page title is " + titleParameters);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleParameters = driver.getTitle();
         if (titleParameters.equals(newTitleParameters))
             System.out.println("When page is refreshed user is still on the same page");
@@ -171,7 +170,7 @@ public class CheckMainMenuTest extends BaseScript{
         String titleAdvancedParameters = driver.getTitle();
         System.out.println("Page title is " + titleAdvancedParameters);
         driver.navigate().refresh();
-        Thread.sleep(1000);
+        actions.waitForContentLoad();
         String newTitleAdvancedParameters = driver.getTitle();
         if (titleAdvancedParameters.equals(newTitleAdvancedParameters))
             System.out.println("When page is refreshed user is still on the same page");
