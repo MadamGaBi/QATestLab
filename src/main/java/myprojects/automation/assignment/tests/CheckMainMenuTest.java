@@ -1,181 +1,59 @@
 package myprojects.automation.assignment.tests;
 
-import myprojects.automation.assignment.BaseScript;
-import myprojects.automation.assignment.GeneralActions;
+import myprojects.automation.assignment.BaseTest;
 import myprojects.automation.assignment.utils.Properties;
+import myprojects.automation.assignment.utils.logging.CustomReporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class CheckMainMenuTest extends BaseScript{
+public class CheckMainMenuTest extends BaseTest {
 
-    public static void main(String[] args) throws InterruptedException {
-        EventFiringWebDriver driver = getConfiguredDriver();
-        driver.get(Properties.getBaseAdminUrl());
-
+    @Test(dataProvider = "getLoginData")
+    public void checkMainMenu(String login, String password){
         // Login
-        String defaultAdminLogin = Properties.getDefaultAdminLogin();
-        String defaultAdminPassword = Properties.getDefaultAdminPassword();
-        GeneralActions actions = new GeneralActions(driver);
-        actions.login(defaultAdminLogin, defaultAdminPassword);
+        CustomReporter.logAction("Login");
+        driver.get(Properties.getBaseAdminUrl());
+        actions.login(login, password);
         actions.waitForContentLoad();
 
         // Check menu item 'Dashboard'
-        WebElement dashboard = driver.findElement(By.xpath(".//li[@id = 'tab-AdminDashboard']/a"));
-        dashboard.click();
-        String titleDashboard = driver.getTitle();
-        System.out.println("Page title is " + titleDashboard);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleDashboard = driver.getTitle();
-        if (titleDashboard.equals(newTitleDashboard))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleDashboard);
-
+        checkMenuItemLocatedBy(".//li[@id = 'tab-AdminDashboard']/a");
         // Check menu item 'Orders'
-        WebElement orders = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminParentOrders']/a"));
-        orders.click();
-        String titleOrders = driver.getTitle();
-        System.out.println("Page title is " + titleOrders);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleOrders = driver.getTitle();
-        if (titleOrders.equals(newTitleOrders))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleOrders);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminParentOrders']/a");
         // Check menu item 'Catalog'
-        WebElement catalog = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminCatalog']/a"));
-        catalog.click();
-        String titleCatalog = driver.getTitle();
-        System.out.println("Page title is " + titleCatalog);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleCatalog = driver.getTitle();
-        if (titleCatalog.equals(newTitleCatalog))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleCatalog);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminCatalog']/a");
         // Check menu item 'Customers'
-        WebElement customers = driver.findElement(By.xpath(".//a[contains(@href, 'AdminCustomers')]"));
-        customers.click();
-        String titleCustomer = driver.getTitle();
-        System.out.println("Page title is " + titleCustomer);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleCustomer = driver.getTitle();
-        if (titleCustomer.equals(newTitleCustomer))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleCustomer);
-
+        checkMenuItemLocatedBy(".//a[contains(@href, 'AdminCustomers')]");
         // Check menu item 'Customer Threads'
-        WebElement helpdesk = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminParentCustomerThreads']/a"));
-        helpdesk.click();
-        String titleCustomerThreads = driver.getTitle();
-        System.out.println("Page title is " + titleCustomerThreads);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleCustomerThreads = driver.getTitle();
-        if (titleCustomerThreads.equals(newTitleCustomerThreads))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleCustomerThreads);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminParentCustomerThreads']/a");
         // Check menu item 'Stats'
-        WebElement stats = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminStats']/a"));
-        stats.click();
-        String titleStats = driver.getTitle();
-        System.out.println("Page title is " + titleStats);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleStats = driver.getTitle();
-        if (titleStats.equals(newTitleStats))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleStats);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminStats']/a");
         // Check menu item 'Modules'
-        WebElement modules = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminParentModulesSf']/a"));
-        modules.click();
-        String titleModules = driver.getTitle();
-        System.out.println("Page title is " + titleModules);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleModules = driver.getTitle();
-        if (titleModules.equals(newTitleModules))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleModules);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminParentModulesSf']/a");
         // Check menu item 'Design'
-        WebElement design = driver.findElement(By.xpath(".//a[contains(@href, 'AdminThemes')]"));
-        design.click();
-        String titleDesign = driver.getTitle();
-        System.out.println("Page title is " + titleDesign);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleDesign = driver.getTitle();
-        if (titleDesign.equals(newTitleDesign))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleDesign);
-
+        checkMenuItemLocatedBy(".//a[contains(@href, 'AdminThemes')]");
         // Check menu item 'Shipping'
-        WebElement shipping = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminParentShipping']/a"));
-        shipping.click();
-        String titleShipping = driver.getTitle();
-        System.out.println("Page title is " + titleShipping);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleShipping = driver.getTitle();
-        if (titleShipping.equals(newTitleShipping))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleShipping);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminParentShipping']/a");
         // Check menu item 'Payment'
-        WebElement payment = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminParentPayment']/a"));
-        payment.click();
-        String titlePayment = driver.getTitle();
-        System.out.println("Page title is " + titlePayment);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitlePayment = driver.getTitle();
-        if (titlePayment.equals(newTitlePayment))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitlePayment);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminParentPayment']/a");
         // Check menu item 'International'
-        WebElement international = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminInternational']/a"));
-        international.click();
-        String titleInternational = driver.getTitle();
-        System.out.println("Page title is " + titleInternational);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleInternational = driver.getTitle();
-        if (titleInternational.equals(newTitleInternational))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleInternational);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminInternational']/a");
         // Check menu item 'Parameters'
-        WebElement parameters = driver.findElement(By.xpath(".//li[@id = 'subtab-ShopParameters']/a"));
-        parameters.click();
-        String titleParameters = driver.getTitle();
-        System.out.println("Page title is " + titleParameters);
-        driver.navigate().refresh();
-        actions.waitForContentLoad();
-        String newTitleParameters = driver.getTitle();
-        if (titleParameters.equals(newTitleParameters))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleParameters);
-
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-ShopParameters']/a");
         // Check menu item 'Advanced Parameters'
-        WebElement advancedParameters = driver.findElement(By.xpath(".//li[@id = 'subtab-AdminAdvancedParameters']/a"));
-        advancedParameters.click();
-        String titleAdvancedParameters = driver.getTitle();
-        System.out.println("Page title is " + titleAdvancedParameters);
+        checkMenuItemLocatedBy(".//li[@id = 'subtab-AdminAdvancedParameters']/a");
+    }
+
+    private void checkMenuItemLocatedBy(String value){
+        CustomReporter.logAction("Check menu item");
+        WebElement menuItem = driver.findElement(By.xpath(value));
+        menuItem.click();
+        String title = driver.getTitle();
         driver.navigate().refresh();
         actions.waitForContentLoad();
-        String newTitleAdvancedParameters = driver.getTitle();
-        if (titleAdvancedParameters.equals(newTitleAdvancedParameters))
-            System.out.println("When page is refreshed user is still on the same page");
-        else System.out.println("Warning! Page is refreshed. Title changed. New title: " + newTitleAdvancedParameters);
-
-        driver.quit();
+        String newTitle = driver.getTitle();
+        Assert.assertEquals(newTitle, title, "Warning! Page is refreshed. Title changed. New title: " + newTitle);
     }
 }
