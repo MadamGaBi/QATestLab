@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a66485e-ad0c-445a-bb15-d577d2bb29e5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/GeneralActions.java" afterPath="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/GeneralActions.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CreateProductTest.java" afterPath="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CreateProductTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="CreateProductTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CreateProductTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="41" column="58" lean-forward="false" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+            <state relative-caret-position="-298">
+              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,10 +97,10 @@
         <option value="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CheckMainMenuTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CreateCategoryTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/model/ProductData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CreateProductTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/LoginTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/testng.xml" />
         <option value="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/GeneralActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CreateProductTest.java" />
       </list>
     </option>
   </component>
@@ -501,39 +500,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateProductTest - 2018.03.21 at 13h 08m 37s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 13h 12m 59s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 13h 16m 31s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 13h 50m 42s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 14h 00m 36s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 14h 04m 40s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 14h 24m 01s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 14h 32m 10s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CreateProductTest - 2018.03.21 at 14h 44m 09s.xml">
-      <configuration name="CreateProductTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="CreateProductTest - 2018.03.21 at 15h 03m 10s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 15h 19m 15s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 15h 22m 43s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 15h 33m 16s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 15h 37m 50s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 15h 55m 14s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 16h 06m 19s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 16h 11m 52s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 16h 25m 59s.xml">
+      <configuration name="CreateProductTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CreateProductTest - 2018.03.21 at 16h 31m 53s.xml">
       <configuration name="CreateProductTest" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="0" width="1346" height="738" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -543,7 +543,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3034826" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32006633" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37810946" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -596,7 +596,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
@@ -1046,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/myprojects/automation/assignment/tests/CreateProductTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="41" column="58" lean-forward="false" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+        <state relative-caret-position="-298">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

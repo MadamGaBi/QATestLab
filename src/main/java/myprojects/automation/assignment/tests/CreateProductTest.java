@@ -39,15 +39,16 @@ public class CreateProductTest extends BaseTest {
 
         // Open product page and check product data
         CustomReporter.logAction("Check product data");
-        WebElement productToCheck = driver.findElement(By.xpath(String.format(".//a[contains(@text(), %s)]", product.getName())));
+        WebElement productToCheck = driver.findElement(By.xpath(String.format(".//a[contains(text(), '%s')]", product.getName())));
         productToCheck.click();
         actions.waitForContentLoad();
         WebElement productName = driver.findElement(By.className("h1"));
         WebElement productQty = driver.findElement(By.className("product-quantities"));
         WebElement productPrice = driver.findElement(By.className("current-price"));
 
-        Assert.assertEquals(productName.getText(), product.getName(), "Product names deffer");
-        Assert.assertEquals(productPrice.getText(), product.getPrice(), "Product prices differ");
+        Assert.assertEquals(productName.getText().toLowerCase(), product.getName().toLowerCase(), "Product names deffer");
+        Assert.assertTrue(productPrice.getText().contains(product.getPrice()), "Product prices differ");
         Assert.assertTrue(productQty.getText().contains(product.getQty().toString()), "Product qty differs");
     }
+
 }
