@@ -1,10 +1,7 @@
 package myprojects.automation.assignment;
 
 import myprojects.automation.assignment.model.ProductData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -94,27 +91,27 @@ public class GeneralActions {
         productNameInput.sendKeys(newProduct.getName());
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("(window).scrollBy(0,500)");
-        productQtyInput.clear();
-        productQtyInput.sendKeys(newProduct.getQty().toString());
-        productPriceInput.clear();
-        productPriceInput.sendKeys(newProduct.getPrice());
+        productQtyInput.sendKeys(Keys.HOME,Keys.chord(Keys.SHIFT, Keys.END),newProduct.getQty().toString());
+        productPriceInput.sendKeys(Keys.HOME,Keys.chord(Keys.SHIFT,Keys.END),newProduct.getPrice());
 
         // activate product
-        WebElement activate = driver.findElement(By.id("form_step1_active"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("switch-input")));
+        WebElement activate = driver.findElement(By.className("switch-input"));
         activate.click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("growls")));
-        WebElement close = driver.findElement(By.id("growl-close"));
-        close.click();
+        if (driver.findElements(By.id("growl-close")).size() > 0)
+            driver.findElement(By.id("growl-close")).click();
 
         // check if product is activated
-        Assert.assertTrue(activate.isSelected(), "Product is not activated");
+        Assert.assertTrue(activate.getAttribute("class").contains("checked"), "Product is not activated");
 
         // save product
-        WebElement save = driver.findElement(By.xpath(".//*[@id = 'submit']"));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(".//*[@class = 'btn btn-primary js-btn-save']")));
+        WebElement save = driver.findElement(By.xpath(".//*[@class = 'btn btn-primary js-btn-save']"));
         save.click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("growls")));
-        close = driver.findElement(By.id("growl-close"));
-        close.click();
+        if (driver.findElements(By.id("growl-close")).size() > 0)
+            driver.findElement(By.id("growl-close")).click();
     }
 
     /**
